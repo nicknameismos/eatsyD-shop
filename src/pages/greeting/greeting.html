@@ -1,0 +1,10 @@
+<ion-content>
+  <ion-slides pager>
+    <ion-slide *ngFor="let item of greeting">
+      <img [src]="item" height="100%">
+    </ion-slide>
+  </ion-slides>
+  <ion-fab right bottom>
+    <button ion-fab color="danger" (click)="gotoLoginPage()">ข้าม</button>
+  </ion-fab>
+</ion-content>
