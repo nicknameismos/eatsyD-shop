@@ -1,3 +1,4 @@
+import { RegisterPage } from './../pages/register/register';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -26,7 +27,8 @@ import { ShopPage } from '../pages/shop/shop';
     TabsPage,
     GreetingPage,
     LoginPage,
-    ShopPage
+    ShopPage,
+    RegisterPage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,9 @@ import { ShopPage } from '../pages/shop/shop';
     TabsPage,
     GreetingPage,
     LoginPage,
-    ShopPage
+    ShopPage,
+    RegisterPage
+
   ],
   providers: [
     StatusBar,
