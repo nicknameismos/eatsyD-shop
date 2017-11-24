@@ -1,6 +1,9 @@
+import { RegisterModel } from './../pages/register/register.model';
 import { Injectable } from '@angular/core';
 import { Http, Headers, Request } from '@angular/http';
 import 'rxjs/add/operator/map';
+import "rxjs/add/operator/toPromise";
+
 import { Server } from './server.config';
 
 @Injectable()
@@ -39,6 +42,16 @@ export class Auth {
         });
     }
 
+    signUp(user) {
+        return this.http.post(this.server.url + 'api/auth/signup', user).map(res =>{
+            let body = res.json();
+            window.localStorage.setItem('user', body);
+            window.localStorage.setItem('token', body.loginToken);
+            return body || {};
+        });
+    }
+
+
     logout() {
         window.localStorage.removeItem('token');
         return true;
@@ -52,4 +65,5 @@ export class Auth {
         }
     }
 
+  
 }
