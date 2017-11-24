@@ -1,3 +1,49 @@
 page-shop {
+    .camera {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        font-size: 2.2em;
+    }
+    .fill {
+        position: absolute;
+        top: 0;
+        height: 270px;
+        background-color: rgba(0, 0, 0, 0.4);
+        width: -webkit-fill-available;
+    }
+    .name {
+        font-weight: bold;
+        position: absolute;
+        margin-top: -90px;
+        color: #fff;
+        font-size: 1.5em;
+    }
+    .name-2 {
+        font-weight: bold;
+        position: absolute;
+        margin-top: -60px;
+        color: #fff;
+        font-size: 1.2em;
+    }
+    .name-3 {
+        position: absolute;
+        margin-top: -38px;
+        font-size: 1.0em;
+    }
 
+    .pin {
+        position: fixed;
+        right: 10px;
+        margin-top: -26px;
+        font-size: 1.8em;
+    }
+
+    .row-custom {
+        flex-wrap: inherit !important;
+    }
+
+    .slide-x {
+        height: 106px;
+    }
 }
