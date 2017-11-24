@@ -1,5 +1,4 @@
 <ion-header>
-
   <ion-navbar>
     <ion-buttons start>
       <button ion-button icon-only>
@@ -8,13 +7,10 @@
     </ion-buttons>
     <ion-title>shop</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content>
-  <img src="http://www.hardrock.com/cafes/amsterdam/files/2308/LegendsRoom.jpg"
-    alt="image">
+  <img src="http://www.hardrock.com/cafes/amsterdam/files/2308/LegendsRoom.jpg" alt="image">
   <span class="fill"></span>
   <ion-row class="camera">
     <ion-icon name="camera" color="light"></ion-icon>
@@ -57,14 +53,19 @@
         <img [src]="item.img" width="124px" height="84px">
         <span class="texthover"> {{item.name}} </span>
       </ion-col>
+      <ion-col col-4>
+        <img src="http://res.cloudinary.com/ha7s6qhcg/image/upload/v1511499758/pp_clfpol.jpg" width="200vh" height="90vh">
+      </ion-col>
     </ion-row>
   </ion-scroll>
-  <ion-row [dragula]='"zone1"' [dragulaOptions]="options" [dragulaModel]='product'>
-    <ion-col col-4 *ngFor="let item of product">
-      <div>
-        <img [src]="item.img" width="124px" height="84px">
-        <span class="texthover"> {{item.name}} </span>
-      </div>
-    </ion-col>
-  </ion-row>
+
+  <div class="row" [dragula]='"zone1"' [dragulaOptions]="options">
+    <div class="col-md-2" *ngFor="let item of product" (press)="showDelete(item.id)">
+      <span class="bin" (click)="deleteProduct(item.id)" *ngIf="sd[item.id]"><ion-icon name="md-close-circle"></ion-icon></span>
+      <img class="img-h" [src]="item.img" alt="image" height="180px" width="220px">
+      <span class="texthover-2" *ngIf="item.name"> {{item.name}} {{item.price | number}}.-</span>
+    </div>
+  </div>
+
+
 </ion-content>

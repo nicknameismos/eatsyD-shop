@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { reorderArray } from 'ionic-angular';
 import { DragulaService } from 'ng2-dragula';
+import { elementDef } from '@angular/core/src/view/element';
 @IonicPage()
 @Component({
   selector: 'page-shop',
@@ -11,18 +12,15 @@ export class ShopPage {
   private cate: Array<any> = [];
   private product: Array<any> = [];
   private promote: Array<any> = [];
-
+  private sd: Array<any> = [];
 
   constructor(private dragulaService: DragulaService, public navCtrl: NavController, public navParams: NavParams) {
     dragulaService.setOptions('zone1', {});
-    for (let x = 0; x < 5; x++) {
-      this.product.push(x);
-    }
   }
 
   ionViewDidLoad() {
     this.promote = [{
-      img: 'http://blankrangemusic.com/images/camera.svg'
+      img: 'http://res.cloudinary.com/ha7s6qhcg/image/upload/v1511519960/camera_bkdxf8.png'
     },
     {
       img: 'http://www.thetimesinplainenglish.com/wp-content/uploads/2017/04/juicing-health-fresh-juice-good.jpg'
@@ -53,28 +51,32 @@ export class ShopPage {
     {
       img: 'http://www.seriouseats.com/recipes/assets_c/2017/06/20170526-no-bake-cheesecake-vicky-wasik-18-thumb-1500xauto-438251.jpg',
       name: 'ของหวาน'
-    },
-    {
-      img: 'http://res.cloudinary.com/ha7s6qhcg/image/upload/v1511499758/pp_clfpol.jpg',
-      name: ''
-    },
+    }
     ];
 
     this.product = [{
+      id: 1,
       img: 'http://food.fnr.sndimg.com/content/dam/images/food/fullset/2015/9/9/1/KC0703_Aglio-e-Olio_s4x3.jpg.rend.hgtvcom.616.462.suffix/1441900756487.jpeg',
-      name: 'สปาเกตตี้'
+      name: 'สปาเกตตี้',
+      price: 100
     },
     {
+      id: 2,
       img: 'http://cdn.cnn.com/cnnnext/dam/assets/151215115345-40-thai-food-4-penang-curry-1-full-169.jpg',
-      name: 'แกงกะทิหมู'
+      name: 'แกงกะทิหมู',
+      price: 100
     },
     {
+      id: 3,
       img: 'https://www.eatingthaifood.com/wp-content/uploads/2015/06/goong-pao-1.jpg',
-      name: 'กุ้งแม่น้ำเผา'
+      name: 'กุ้งแม่น้ำเผา',
+      price: 100
     },
     {
+      id: 4,
       img: 'http://food.fnr.sndimg.com/content/dam/images/food/fullset/2016/10/30/0/FN_thai-restaurant-Som-tum-Der-larb-moo_s4x3.jpg.rend.hgtvcom.966.725.suffix/1477872052701.jpeg',
-      name: 'ลาบหมู'
+      name: 'ลาบหมู',
+      price: 100
     },
     {
       img: 'http://res.cloudinary.com/ha7s6qhcg/image/upload/v1511499758/pp_clfpol.jpg',
@@ -111,9 +113,22 @@ export class ShopPage {
     ];
   }
 
-  reorderItems(indexes) {
-    let element = this.product[indexes.from];
-    this.product.splice(indexes.from, 1);
-    this.product.splice(indexes.to, 0, element);
+  deleteProduct(id) {
+    for (let i = 0; i < this.product.length; i++) {
+      if (id == this.product[i].id) {
+        this.product[i] = {
+          img: 'http://res.cloudinary.com/ha7s6qhcg/image/upload/v1511499758/pp_clfpol.jpg',
+          name: ''
+        }
+      }
+    }
+  }
+
+  showDelete(id) {
+    if (this.sd[id]) {
+      this.sd[id] = false;
+    } else {
+      this.sd[id] = true;
+    }
   }
 }
