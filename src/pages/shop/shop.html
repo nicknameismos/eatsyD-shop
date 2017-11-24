@@ -1,18 +1,50 @@
-<!--
-  Generated template for the ShopPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only>
+        <ion-icon name="person"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>shop</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <img src="https://images.unsplash.com/photo-1494390248081-4e521a5940db?auto=format&fit=crop&w=695&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D"
+    alt="image">
+  <span class="fill"></span>
+  <ion-row class="camera">
+    <ion-icon name="camera" color="light"></ion-icon>
+  </ion-row>
+  <ion-row class="name">
+    <ion-col>
+      ละมุนภัณฑ์
+      <ion-icon name="md-create" color="light"></ion-icon>
+    </ion-col>
+  </ion-row>
+  <ion-row class="name-2">
+    <ion-col>
+      IDEA COFFEE AND SPLACE
+    </ion-col>
+  </ion-row>
+  <ion-row class="name-3">
+    <ion-col>
+      <span ion-text color="danger"> LUMLUKKA 5</span>
+      <span ion-text color="secondary">เวลา 8:00 - 20:00 น. </span>
+      <span ion-text color="secondary" class="pin">
+        <ion-icon name="pin" color="danger"></ion-icon>
+      </span>
+    </ion-col>
+  </ion-row>
 
+  <ion-scroll scrollX="true" class="slide-x">
+    <ion-row no-padding class="row-custom">
+      <ion-col col-4 *ngFor="let item of imgs">
+        <img [src]="item" width="124px" height="84px">
+      </ion-col>
+    </ion-row>
+  </ion-scroll>
 </ion-content>

@@ -46,7 +46,32 @@ $colors: (
 // --------------------------------------------------
 // iOS only Sass variables can go here
 
+.toolbar-background-ios {
+  background: #ED3740 !important;
+}
+.tabs-ios .tabbar {
+  background: #ED3740 !important;
+}
 
+.tabs-ios .tab-button-icon {
+  color: #ffffff !important;
+}
+
+.toolbar-title-ios {
+  color: #ffffff !important;
+}
+
+.tabs-ios .tab-button:hover:not(.disable-hover), .tabs-ios .tab-button[aria-selected=true] {
+  color: #ffffff !important;
+}
+
+.scroll-content {
+  background-color: #f2f2f2 !important;
+}
+
+.bar-button-default-ios {
+  color: #ffffff !important;
+}
 
 
 // App Material Design Variables

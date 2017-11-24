@@ -1,13 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Auth } from '../../provider/auth.service';
-
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { TabsPage } from '../tabs/tabs';
 
 @IonicPage()
 @Component({
@@ -27,6 +21,7 @@ export class LoginPage {
   login() {
     this.auth.login(this.credentials).subscribe(data => {
       console.log(data);
+      this.navCtrl.setRoot(TabsPage);
     }, error => {
       console.log(error);
     })

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
 import { LoginPage } from '../login/login';
+import { elementDef } from '@angular/core/src/view/element';
+import { TabsPage } from '../tabs/tabs';
 
 @IonicPage()
 @Component({
@@ -10,7 +12,7 @@ import { LoginPage } from '../login/login';
 export class GreetingPage {
   private greeting: Array<any> = [];
 
-  constructor(private app: App,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private app: App, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -21,8 +23,12 @@ export class GreetingPage {
     ];
   }
 
-  gotoLoginPage(){
-    this.app.getRootNav().push(LoginPage);
+  gotoLoginPage() {
+    if (window.localStorage.getItem('token')) {
+      this.navCtrl.setRoot(TabsPage);
+    } else {
+      this.app.getRootNav().push(LoginPage);      
+    }
   }
 
 }
