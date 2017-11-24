@@ -15,4 +15,35 @@
 
 <ion-content padding>
 
+  <ion-item>
+    <ion-label stacked>firstname</ion-label>
+    <ion-input type="text" [(ngModel)]="registerData.firstName"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>lastname</ion-label>
+    <ion-input type="text" [(ngModel)]="registerData.lastName"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>phone</ion-label>
+    <ion-input type="text" [(ngModel)]="registerData.mobile"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Email</ion-label>
+    <ion-input type="text" [(ngModel)]="registerData.email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>birthday</ion-label>
+    <ion-datetime tappable displayFormat="DD MMMM YYYY" [(ngModel)]="registerData.dateOfBirth"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>gender</ion-label>
+    <ion-input type="text" [(ngModel)]="registerData.gender"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Password</ion-label>
+    <ion-input type="password" [(ngModel)]="registerData.password"></ion-input>
+  </ion-item>
+  <button ion-button block (click)="register()">
+    Register
+  </button>
 </ion-content>
