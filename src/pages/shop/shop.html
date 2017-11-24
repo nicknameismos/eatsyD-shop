@@ -34,17 +34,38 @@
     <ion-col>
       <span ion-text color="danger"> LUMLUKKA 5</span>
       <span ion-text color="secondary">เวลา 8:00 - 20:00 น. </span>
-      <span ion-text color="secondary" class="pin">
-        <ion-icon name="pin" color="danger"></ion-icon>
-      </span>
     </ion-col>
   </ion-row>
-
+  <ion-row>
+    <ion-col>
+        <span ion-text color="secondary" class="pin">
+            <ion-icon name="pin" color="danger"></ion-icon>
+          </span>
+    </ion-col>
+  </ion-row>
+  <ion-label fixed class="text1">Category</ion-label>
   <ion-scroll scrollX="true" class="slide-x">
     <ion-row no-padding class="row-custom">
-      <ion-col col-4 *ngFor="let item of imgs">
+      <ion-col col-4 *ngFor="let item of cate">
         <img [src]="item" width="124px" height="84px">
       </ion-col>
     </ion-row>
   </ion-scroll>
+  <ion-label fixed class="text1">Product</ion-label>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4 *ngFor="let item of product">
+          <img [src]="item" width="124px" height="84px">
+      </ion-col>
+      <ion-col col-4 *ngFor="let item of product">
+          <img [src]="item" width="124px" height="84px">
+      </ion-col>
+      <ion-col col-4 *ngFor="let item of product">
+          <img [src]="item" width="124px" height="84px">
+      </ion-col>
+      <ion-col col-4 *ngFor="let item of product">
+          <img [src]="item" width="124px" height="84px">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
