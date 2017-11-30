@@ -5,6 +5,8 @@
 // roboto, and noto sans fonts
 $font-path: "../assets/fonts";
 
+// $font-path: "https://fonts.googleapis.com/css?family=Kanit";
+// font-family: 'Kanit', sans-serif;
 
 // The app direction is used to include
 // rtl styles in your app. For more info, please see:
@@ -73,7 +75,15 @@ $colors: (
   color: #ffffff !important;
 }
 
-
+@font-face {
+  font-family: 'Kanit', sans-serif;
+  src: url("../fonts/Kanit/");
+  }
+  
+  body, span, button, h1, h2, h3, h4, h5, h6, p, ion-item, ion-title,ion-col,ion-label {
+  font-family: 'Kanit', sans-serif !important;
+  }
+  
 
 // App Material Design Variables
 // --------------------------------------------------

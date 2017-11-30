@@ -24,6 +24,7 @@ import { ShopTimeEditPage } from '../pages/shop-time-edit/shop-time-edit';
 import { CreatecatePage } from '../pages/createcate/createcate';
 import { ShopServiceProvider } from '../providers/shop-service/shop-service';
 import { CoreserviceProvider } from '../providers/coreservice/coreservice';
+import { ImagePicker } from '@ionic-native/image-picker';
 @NgModule({
   declarations: [
     MyApp,
@@ -39,7 +40,7 @@ import { CoreserviceProvider } from '../providers/coreservice/coreservice';
     ShopTimeEditPage,
     CreatecatePage,
     CreateproductPage
-    
+
   ],
   imports: [
     BrowserModule,
@@ -77,7 +78,10 @@ import { CoreserviceProvider } from '../providers/coreservice/coreservice';
     Server,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     ShopServiceProvider,
-    CoreserviceProvider
+    CoreserviceProvider,
+    ImagePicker,
+
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
 export class AppModule { }

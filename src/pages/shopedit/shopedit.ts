@@ -1,6 +1,8 @@
+import { ShopTimeEditPage } from '../shop-time-edit/shop-time-edit';
 
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, PopoverController, ViewController } from 'ionic-angular';
+import { CreatecatePage } from '../createcate/createcate';
 
 /**
  * Generated class for the ShopeditPage page.
@@ -15,9 +17,10 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
   templateUrl: 'shopedit.html',
 })
 export class ShopeditPage {
+
   editData;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, viewCtrl: ViewController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, viewCtrl: ViewController, public popoverCtrl : PopoverController ) {
     this.editData = this.navParams.data;
   }
   ionViewDidLoad() {
@@ -29,7 +32,11 @@ export class ShopeditPage {
   close() {
     this.navCtrl.pop();
   }
+  presentPopover(myEvent) {
+    let popover = this.popoverCtrl.create(ShopTimeEditPage);
+    popover.present({
+    });
 
-  
+  }
 
 }
