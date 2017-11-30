@@ -151,15 +151,16 @@ export class ShopPage {
     }
   }
   edit() {
-    //  this.navCtrl.push(ShopeditPage, this.shopContact)
+    
+     this.navCtrl.push(ShopeditPage, this.shopContact)
     // this.popoverCtrl.create(ShopeditPage, this.shopContact);
-    let opt ={
-      cssClass: "popSize"
-    }
-    let popover = this.popoverCtrl.create(ShopeditPage,this.shopContact,opt);
-    popover.present({
+    // let opt ={
+    //   cssClass: "popSize"
+    // }
+    // let popover = this.popoverCtrl.create(ShopeditPage,this.shopContact,opt);
+    // popover.present({
       
-    });
+    // });
   }
   presentPopover1(myEvent) {
     let popover = this.popoverCtrl.create(CreatecatePage);
