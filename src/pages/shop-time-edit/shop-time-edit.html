@@ -1,0 +1,77 @@
+<!--
+  Generated template for the ShopTimeEditPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<ion-content>
+  <ion-row no-padding>
+      <ion-col col-12 text-right no-padding>
+          <button ion-button clear icon-only color="danger" (click)="close()">
+            <ion-icon name="ios-close-circle-outline"></ion-icon>
+          </button>
+        </ion-col>
+  </ion-row>
+
+
+  <ion-item class="borderinput" no-padding>
+    <ion-input type="text" placeholder="รายละเอียด" [(ngModel)]="timeDetail">
+    </ion-input>
+  </ion-item>
+  <ion-item class="borderinput" no-padding>
+    <ion-label>เวลาเปิด</ion-label>
+    <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="openTime"></ion-datetime>
+  </ion-item>
+  <ion-item class="borderinput">
+    <ion-label>เวลาปิด</ion-label>
+    <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="closeTime"></ion-datetime>
+  </ion-item>
+  <ion-grid class="borderinput2">
+    <ion-row>
+      <ion-col col-12 no-padding>
+        <ion-list>
+          <ion-label label1>วันเปิดร้าน</ion-label>
+
+          <ion-item no-lines fix-margin-label>
+            <ion-label item-start>อาทิตย์</ion-label>
+            <ion-checkbox [(ngModel)]="sun" item-end></ion-checkbox>
+          </ion-item>
+
+          <ion-item no-lines fix-margin-label>
+            <ion-label item-start>จันทร์</ion-label>
+            <ion-checkbox [(ngModel)]="mon" item-end></ion-checkbox>
+          </ion-item>
+          <ion-item no-lines fix-margin-label>
+            <ion-label item-start>อังคาร</ion-label>
+            <ion-checkbox [(ngModel)]="tue" item-end></ion-checkbox>
+          </ion-item>
+
+          <ion-item no-lines fix-margin-label>
+            <ion-label item-start>พุธ</ion-label>
+            <ion-checkbox [(ngModel)]="wed" item-end></ion-checkbox>
+          </ion-item>
+          <ion-item no-lines fix-margin-label>
+            <ion-label item-start>พฤหัสบดี</ion-label>
+            <ion-checkbox [(ngModel)]="thu" item-end></ion-checkbox>
+          </ion-item>
+          <ion-item no-lines fix-margin-label>
+            <ion-label item-start>ศุกร์</ion-label>
+            <ion-checkbox [(ngModel)]="fri" item-end></ion-checkbox>
+          </ion-item>
+          <ion-item no-lines >
+            <ion-label item-start>เสาร์</ion-label>
+            <ion-checkbox [(ngModel)]="sat" item-end></ion-checkbox>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-row>
+    <ion-col col-12 text-center>
+      <button ion-button round color="danger" (click)="save()">Save</button>
+    </ion-col>
+  </ion-row>
+</ion-content>

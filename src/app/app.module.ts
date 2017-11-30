@@ -20,7 +20,11 @@ import { Auth } from '../provider/auth.service';
 import { HttpModule } from '@angular/http';
 import { ShopPage } from '../pages/shop/shop';
 import { ShopeditPage } from '../pages/shopedit/shopedit';
+<<<<<<< HEAD
+import { ShopTimeEditPage } from '../pages/shop-time-edit/shop-time-edit';
+=======
 import { CreatecatePage } from '../pages/createcate/createcate';
+>>>>>>> 2854d6cfa77762b1b36802ee88b7fc0d15aead4d
 @NgModule({
   declarations: [
     MyApp,
@@ -33,9 +37,13 @@ import { CreatecatePage } from '../pages/createcate/createcate';
     ShopPage,
     RegisterPage,
     ShopeditPage,
+<<<<<<< HEAD
+    ShopTimeEditPage
+=======
     CreatecatePage,
     CreateproductPage
     
+>>>>>>> 2854d6cfa77762b1b36802ee88b7fc0d15aead4d
   ],
   imports: [
     BrowserModule,
@@ -60,9 +68,13 @@ import { CreatecatePage } from '../pages/createcate/createcate';
     ShopPage,
     RegisterPage,
     ShopeditPage,
+<<<<<<< HEAD
+    ShopTimeEditPage
+=======
     CreatecatePage,
     CreateproductPage
 
+>>>>>>> 2854d6cfa77762b1b36802ee88b7fc0d15aead4d
   ],
   providers: [
     StatusBar,

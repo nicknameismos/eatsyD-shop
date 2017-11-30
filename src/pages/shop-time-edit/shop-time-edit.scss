@@ -1,0 +1,62 @@
+page-shop-time-edit {
+    .borderinput {
+        background: rgb(255, 255, 255);
+        padding-left: 2vh;
+        height: 5vh;
+        width: auto;
+        margin-left: 1vh;
+        margin-right: 1vh;
+        margin-bottom: 1vh;
+        border-radius: 2em;
+        border: 1px solid red;
+    }
+    [bgColor] {
+        background-color: white !important;
+    }
+    .list-ios {
+        margin: -1px 0 5px;
+    }
+    .item-ios {
+        font-size: 1.3rem;
+    }
+    [label1] {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: -0vh;
+    }
+    .borderinput2 {
+        background: rgb(255, 255, 255);
+        height: auto;
+        width: auto;
+        margin-left: 1vh;
+        margin-right: 1vh;
+        border-radius: 2rem;
+        border: 1px solid red;
+    }
+    .custom-checkbox .icon {
+        font-size: 20px;
+        position: absolute;
+        left: 16px;
+    }
+    .custom-checkbox i.checkbox-icon {
+        display: none;
+    }
+    .checkbox {
+        margin: 9px 15px 9px 4px;
+        .checkbox-icon {
+            background-image: url("");
+            background-color: transparent;
+            background-size: cover;
+            border: none;
+            &.checkbox-checked {
+                background-image: url("../assets/icon/right.png");
+            }
+            .checkbox-inner {
+                border: none;
+            }
+        }
+    }
+    [fix-margin-label] {
+        margin-bottom: -1vh;
+    }
+}
