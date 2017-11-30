@@ -17,20 +17,24 @@
   </ion-row>
   <ion-row class="name">
     <ion-col>
-      ละมุนภัณฑ์
-      <ion-icon name="md-create" color="light"></ion-icon>
+      {{shopContact.name}}
+      <ion-icon name="md-create" color="light"(click)="edit()">
+      
+      </ion-icon>
     </ion-col>
   </ion-row>
   <ion-row class="name-2">
     <ion-col>
-      IDEA COFFEE AND SPLACE
+      {{shopContact.description}}
     </ion-col>
   </ion-row>
   <ion-row class="name-3">
     <ion-col>
-      <span ion-text color="danger"> LUMLUKKA 5</span>
-      <span ion-text color="secondary">เวลา 8:00 - 20:00 น. </span>
+      <span ion-text color="light"> {{shopContact.address}}</span>
+      <span ion-text color="light">{{shopContact.time}} </span>
     </ion-col>
+  </ion-row>
+  <ion-row>
   </ion-row>
   <ion-row>
     <ion-col>
@@ -39,7 +43,7 @@
       </span>
     </ion-col>
   </ion-row>
-  <ion-scroll scrollX="true" class="slide-x">
+  <ion-scroll scrollX="true" class="slide-xpromote">
     <ion-row no-padding class="row-custom">
       <ion-col col-4 *ngFor="let item of promote">
         <img [src]="item.img" width="180vh" height="95vh">
@@ -47,14 +51,14 @@
     </ion-row>
   </ion-scroll>
   <ion-label fixed class="text1">Products</ion-label>
-  <ion-scroll scrollX="true" class="slide-x">
+  <ion-scroll scrollX="true" class="slide-xcate">
     <ion-row no-padding class="row-custom">
       <ion-col col-4 *ngFor="let item of cate">
         <img [src]="item.img" width="144px" height="104px">
         <span class="texthover"> {{item.name}} </span>
       </ion-col>
       <ion-col col-4>
-        <img src="http://res.cloudinary.com/ha7s6qhcg/image/upload/v1511499758/pp_clfpol.jpg" width="180vh" height="90vh">
+        <img src="http://res.cloudinary.com/ha7s6qhcg/image/upload/v1511499758/pp_clfpol.jpg" width="180vh" height="160vh">
       </ion-col>
     </ion-row>
   </ion-scroll>

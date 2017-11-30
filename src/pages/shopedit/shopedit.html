@@ -1,0 +1,64 @@
+<!--
+  Generated template for the ShopeditPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="stickth">
+
+  <ion-navbar>
+    <ion-title>Edit Shop</ion-title>
+    <ion-buttons end>
+      <button ion-button clear icon-only color="light"(click)="close()">
+        <ion-icon name="ios-close-circle-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content no-bounce padding-top class="swiper-container">
+  <ion-grid>
+    <ion-row>
+      <ion-col col-8 no-padding>
+        <ion-item class="borderinput">
+          <ion-label>หมวดหมู่ร้านค้า</ion-label>
+          <ion-select [(ngModel)]="Categories">
+            <ion-option>ตามสั่ง</ion-option>
+            <ion-option>คาเฟ่</ion-option>
+            <ion-option>ชาบู</ion-option>
+            <ion-option>หมูกะทะ</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-input type="text" placeholder="ชื่อร้านค้า" class="borderinput" [(ngModel)]="editData.name">
+        </ion-input>
+        <ion-input type="text" placeholder="ชื่อร้านค้า (ภาษาอังกฤษ)" class="borderinput">
+        </ion-input>
+      </ion-col>
+      <ion-col col-4>
+        <img src="http://res.cloudinary.com/ha7s6qhcg/image/upload/v1511519960/camera_bkdxf8.png">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <ion-input type="text" placeholder="รายละเอียดร้าน" class="borderinput" [(ngModel)]="editData.description">
+        </ion-input>
+        <ion-input type="email" placeholder="E-mail" class="borderinput">
+        </ion-input>
+        <ion-input type="text" placeholder="หมายเลขโทรศัพท์" class="borderinput">
+        </ion-input>
+        <ion-input type="text" placeholder="ช่องทางการติดต่ออื่นๆ" class="borderinput" [(ngModel)]="editData.address">
+        </ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-12 class="btncent">
+        <button ion-button round color="danger" (click)="save()">Save</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

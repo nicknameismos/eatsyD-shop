@@ -1,5 +1,6 @@
+import { ShopeditPage } from '../shopedit/shopedit';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, ModalController, Platform, PopoverController } from 'ionic-angular';
 import { reorderArray } from 'ionic-angular';
 import { DragulaService } from 'ng2-dragula';
 import { elementDef } from '@angular/core/src/view/element';
@@ -7,6 +8,7 @@ import { elementDef } from '@angular/core/src/view/element';
 @Component({
   selector: 'page-shop',
   templateUrl: 'shop.html',
+
 })
 export class ShopPage {
   private cate: Array<any> = [];
@@ -14,9 +16,23 @@ export class ShopPage {
   private promote: Array<any> = [];
   private sd: Array<any> = [];
 
-  constructor(private dragulaService: DragulaService, public navCtrl: NavController, public navParams: NavParams) {
+  shopContact = {
+    name: 'ละมุนภัณฑ์',
+    description: 'COFFICE IDEA SPACE',
+    address: 'LUMLUKKA 5',
+    time: '18.00 - 24.00 น.'
+
+  }
+
+  constructor(private dragulaService: DragulaService,
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public modalController: ModalController,
+    public popoverCtrl: PopoverController) {
     dragulaService.setOptions('zone1', {});
   }
+
+
 
   ionViewDidLoad() {
     this.promote = [{
@@ -130,5 +146,16 @@ export class ShopPage {
     } else {
       this.sd[id] = true;
     }
+  }
+  edit() {
+    //  this.navCtrl.push(ShopeditPage, this.shopContact)
+    // this.popoverCtrl.create(ShopeditPage, this.shopContact);
+    let opt ={
+      cssClass: "popSize"
+    }
+    let popover = this.popoverCtrl.create(ShopeditPage,this.shopContact,opt);
+    popover.present({
+      
+    });
   }
 }

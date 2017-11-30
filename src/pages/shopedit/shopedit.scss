@@ -1,0 +1,26 @@
+page-shopedit {
+.borderinput{
+    background: rgb(255, 255, 255);
+    padding-left: 2vh;
+    height: 5vh;
+    width: auto;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    margin-bottom: 3vh;
+    border-radius: 25px;
+    border: 1px solid red;
+    
+}
+.btncent{
+    text-align: center;
+}
+.swiper-container {
+    height: initial;
+}
+#addStepwrapper{
+    overflow:hidden !important;
+}
+.stickth{
+    position: sticky;
+}
+}

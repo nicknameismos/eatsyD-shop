@@ -1,8 +1,10 @@
+
 import { RegisterPage } from './../pages/register/register';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { Keyboard } from "@ionic-native/keyboard";
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -17,7 +19,7 @@ import { Server } from '../provider/server.config';
 import { Auth } from '../provider/auth.service';
 import { HttpModule } from '@angular/http';
 import { ShopPage } from '../pages/shop/shop';
-
+import { ShopeditPage } from '../pages/shopedit/shopedit';
 @NgModule({
   declarations: [
     MyApp,
@@ -28,13 +30,19 @@ import { ShopPage } from '../pages/shop/shop';
     GreetingPage,
     LoginPage,
     ShopPage,
-    RegisterPage
+    RegisterPage,
+    ShopeditPage
   ],
   imports: [
     BrowserModule,
     DragulaModule,
     HttpModule,
-    IonicModule.forRoot(MyApp, { mode: 'ios' })
+    IonicModule.forRoot(MyApp, {
+      mode: 'ios',
+      scrollAssist: false,
+      autoFocusAssist: false,
+      scrollPadding: false,
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -46,13 +54,15 @@ import { ShopPage } from '../pages/shop/shop';
     GreetingPage,
     LoginPage,
     ShopPage,
-    RegisterPage
+    RegisterPage,
+    ShopeditPage
 
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Auth,
+    Keyboard,
     Server,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]

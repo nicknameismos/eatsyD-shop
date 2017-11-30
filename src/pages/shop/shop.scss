@@ -1,4 +1,9 @@
+.popover-ios .popover-content{
+    width: 80vw;
+    position: sticky;
+}
 page-shop {
+   
     .camera {
         position: absolute;
         right: 26px;
@@ -43,8 +48,11 @@ page-shop {
     .row-custom {
         flex-wrap: inherit !important;
     }
-    .slide-x {
-        height: 20vh;
+    .slide-xpromote {
+        height: 17.5vh;
+    }
+    .slide-xcate {
+        height: 18vh;
     }
     .text1 {
         font-size: 2.7vh;
