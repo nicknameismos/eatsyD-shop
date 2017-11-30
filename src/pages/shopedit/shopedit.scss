@@ -27,5 +27,18 @@ page-shopedit {
     background: rgb(255, 255, 255);
     border-radius: 25px;
     border: 1px solid red;
+    margin-bottom: 3vh;
+}
+.marginL{
+margin-left: 3vh;
+}
+.pin {
+    position: absolute;
+    right: 2vh;
+    margin-top: -9vh;
+    font-size: 1.8em
+}
+.wordbreak{
+    word-break: break-all;
 }
 }
