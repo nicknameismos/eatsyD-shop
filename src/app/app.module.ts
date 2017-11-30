@@ -22,6 +22,8 @@ import { ShopPage } from '../pages/shop/shop';
 import { ShopeditPage } from '../pages/shopedit/shopedit';
 import { ShopTimeEditPage } from '../pages/shop-time-edit/shop-time-edit';
 import { CreatecatePage } from '../pages/createcate/createcate';
+import { ShopServiceProvider } from '../providers/shop-service/shop-service';
+import { CoreserviceProvider } from '../providers/coreservice/coreservice';
 @NgModule({
   declarations: [
     MyApp,
@@ -73,7 +75,9 @@ import { CreatecatePage } from '../pages/createcate/createcate';
     Auth,
     Keyboard,
     Server,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    ShopServiceProvider,
+    CoreserviceProvider
   ]
 })
 export class AppModule { }
