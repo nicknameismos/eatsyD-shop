@@ -1,9 +1,11 @@
+import { CreateproductPage } from '../createproduct/createproduct';
 import { ShopeditPage } from '../shopedit/shopedit';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, ModalController, Platform, PopoverController } from 'ionic-angular';
 import { reorderArray } from 'ionic-angular';
 import { DragulaService } from 'ng2-dragula';
 import { elementDef } from '@angular/core/src/view/element';
+import { CreatecatePage } from '../createcate/createcate';
 @IonicPage()
 @Component({
   selector: 'page-shop',
@@ -31,6 +33,7 @@ export class ShopPage {
     public popoverCtrl: PopoverController) {
     dragulaService.setOptions('zone1', {});
   }
+  
 
 
 
@@ -158,4 +161,15 @@ export class ShopPage {
       
     });
   }
+  presentPopover1(myEvent) {
+    let popover = this.popoverCtrl.create(CreatecatePage);
+    popover.present({
+    });
+  }
+  presentPopover2(myEvent) {
+    let popover = this.popoverCtrl.create(CreateproductPage);
+    popover.present({
+    });
+  }
+  
 }
