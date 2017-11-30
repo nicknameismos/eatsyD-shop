@@ -17,6 +17,14 @@ export class ShopServiceProvider {
     console.log('Hello ShopServiceProvider Provider');
   }
 
+  getShopByID(id): Promise<any> {
+    let headers = this.coreService.authorizationHeader();
+    return this.http.get(this.server + 'shops/' + id, { headers: headers })
+      .toPromise()
+      .then(response => response.json() as any)
+      .catch(this.handleError);
+  }
+
   updateShopByID(data): Promise<any> {
     let headers = this.coreService.authorizationHeader();
     return this.http.put(this.server + 'shops/' + data._id, data, { headers: headers })
