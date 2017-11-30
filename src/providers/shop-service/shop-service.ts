@@ -17,6 +17,8 @@ export class ShopServiceProvider {
     console.log('Hello ShopServiceProvider Provider');
   }
 
+
+  //shop
   getShopByID(id): Promise<any> {
     let headers = this.coreService.authorizationHeader();
     return this.http.get(this.server + 'shops/' + id, { headers: headers })
@@ -41,6 +43,8 @@ export class ShopServiceProvider {
       .catch(this.handleError);
   }
 
+
+  //product crud
   createProduct(product): Promise<any> {
     let headers = this.coreService.authorizationHeader();
     return this.http.post(this.server + 'products/', product, { headers: headers })
@@ -73,6 +77,22 @@ export class ShopServiceProvider {
       .catch(this.handleError);
   }
 
+  //category product
+  createCategory(categoryproduct): Promise<any> {
+    let headers = this.coreService.authorizationHeader();
+    return this.http.post(this.server + 'categoryproducts/', categoryproduct, { headers: headers })
+      .toPromise()
+      .then(response => response.json() as any)
+      .catch(this.handleError);
+  }
+
+  updateCategory(categoryproduct): Promise<any> {
+    let headers = this.coreService.authorizationHeader();
+    return this.http.put(this.server + 'categoryproducts/' + categoryproduct._id, categoryproduct, { headers: headers })
+      .toPromise()
+      .then(response => response.json() as any)
+      .catch(this.handleError);
+  }
 
   private handleError(error: any): Promise<any> {
     return Promise.reject(error.message || error);
