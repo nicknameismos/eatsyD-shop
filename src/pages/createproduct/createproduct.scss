@@ -1,4 +1,10 @@
-page-shopedit {
+page-createproduct {
+.padding{
+    padding-right: 1vh;
+    padding-left: 2vh;
+    margin-left: 1vh;
+    margin-top: 4vh;
+}
 .borderinput{
     background: rgb(255, 255, 255);
     padding-left: 2vh;
@@ -13,19 +19,5 @@ page-shopedit {
 }
 .btncent{
     text-align: center;
-}
-.swiper-container {
-    height: initial;
-}
-#addStepwrapper{
-    overflow:hidden !important;
-}
-.stickth{
-    position: sticky;
-}
-.bordertime{
-    background: rgb(255, 255, 255);
-    border-radius: 25px;
-    border: 1px solid red;
 }
 }

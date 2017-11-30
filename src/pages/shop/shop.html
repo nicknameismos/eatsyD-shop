@@ -46,7 +46,7 @@
   <ion-scroll scrollX="true" class="slide-xpromote">
     <ion-row no-padding class="row-custom">
       <ion-col col-4 *ngFor="let item of promote">
-        <img [src]="item.img" width="180vh" height="95vh">
+        <img [src]="item.img" width="180vh" height="95vh" (click)="presentPopover2($event)">
       </ion-col>
     </ion-row>
   </ion-scroll>
@@ -58,7 +58,7 @@
         <span class="texthover"> {{item.name}} </span>
       </ion-col>
       <ion-col col-4>
-        <img src="http://res.cloudinary.com/ha7s6qhcg/image/upload/v1511499758/pp_clfpol.jpg" width="180vh" height="160vh">
+        <img src="http://res.cloudinary.com/ha7s6qhcg/image/upload/v1511499758/pp_clfpol.jpg" width="180vh" height="160vh" (click)="presentPopover1($event)">
       </ion-col>
     </ion-row>
   </ion-scroll>
