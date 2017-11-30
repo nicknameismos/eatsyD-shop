@@ -14,22 +14,25 @@
 
 
 <ion-content no-padding>
-  <ion-grid class="btncent">
-    <ion-row>
-      <ion-col>
-    <img src="https://image.flaticon.com/icons/png/512/635/635902.png" width="90vw" height="90vh" class="margintop">
-  </ion-col>
+  <ion-grid >
+    <ion-row fix-height>
+      <ion-col col-12 text-center>
+        <button ion-button clear (click)="selectPic()" fix-height2>
+          <img src="https://image.flaticon.com/icons/png/512/635/635902.png" width="90vw" height="90vh" >
+          </button>
+
+      </ion-col>
     </ion-row>
     <ion-row>
-    <ion-col>
-  <ion-input type="text" placeholder="Category name" class="borderinput">
-  </ion-input>
-</ion-col>
-</ion-row>
-<ion-row>
-  <ion-col>
-      <button ion-button round color="danger" (click)="save()">Save</button>
-  </ion-col>
-</ion-row>
-</ion-grid>
+      <ion-col text-center>
+        <ion-input type="text" placeholder="Category name" class="borderinput">
+        </ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        <button ion-button round color="danger" (click)="save()">Save</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
