@@ -2,7 +2,7 @@ import { TabsPage } from './../tabs/tabs';
 import { RegisterModel } from './register.model';
 import { Auth } from './../../provider/auth.service';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AlertController, IonicPage, NavController, NavParams } from 'ionic-angular';
 // import { FormBuilder, Validators } from '@angular/forms';
 
 /**
@@ -23,7 +23,8 @@ export class RegisterPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     // public form: FormBuilder,
-    private auth: Auth
+    private auth: Auth,
+    public alertCtrl: AlertController
   ) {
     // let EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
 
@@ -62,8 +63,18 @@ export class RegisterPage {
         console.log(err);
       });
     } else {
-      alert('กรุณากรอกรหัสอย่างน้อย 6-10 ตัว');
+      // alert('ต้องมีตังอักษรและตัวเลขอย่างน้อย 6-10 ตัว');
+      this.showAlert();
     }
 
+  }
+
+  showAlert() {
+    let alert = this.alertCtrl.create({
+      title: 'Password!',
+      subTitle: 'ต้องมีตัวอักษรและตัวเลขอย่างน้อย 6-10 ตัว!',
+      buttons: ['OK']
+    });
+    alert.present();
   }
 }
