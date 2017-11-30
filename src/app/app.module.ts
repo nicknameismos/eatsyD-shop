@@ -20,6 +20,7 @@ import { Auth } from '../provider/auth.service';
 import { HttpModule } from '@angular/http';
 import { ShopPage } from '../pages/shop/shop';
 import { ShopeditPage } from '../pages/shopedit/shopedit';
+import { ShopTimeEditPage } from '../pages/shop-time-edit/shop-time-edit';
 @NgModule({
   declarations: [
     MyApp,
@@ -31,7 +32,8 @@ import { ShopeditPage } from '../pages/shopedit/shopedit';
     LoginPage,
     ShopPage,
     RegisterPage,
-    ShopeditPage
+    ShopeditPage,
+    ShopTimeEditPage
   ],
   imports: [
     BrowserModule,
@@ -55,8 +57,8 @@ import { ShopeditPage } from '../pages/shopedit/shopedit';
     LoginPage,
     ShopPage,
     RegisterPage,
-    ShopeditPage
-
+    ShopeditPage,
+    ShopTimeEditPage
   ],
   providers: [
     StatusBar,
