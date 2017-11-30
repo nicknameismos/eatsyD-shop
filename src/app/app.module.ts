@@ -1,4 +1,4 @@
-
+import { CreateproductPage } from '../pages/createproduct/createproduct';
 import { RegisterPage } from './../pages/register/register';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,6 +20,7 @@ import { Auth } from '../provider/auth.service';
 import { HttpModule } from '@angular/http';
 import { ShopPage } from '../pages/shop/shop';
 import { ShopeditPage } from '../pages/shopedit/shopedit';
+import { CreatecatePage } from '../pages/createcate/createcate';
 @NgModule({
   declarations: [
     MyApp,
@@ -31,7 +32,10 @@ import { ShopeditPage } from '../pages/shopedit/shopedit';
     LoginPage,
     ShopPage,
     RegisterPage,
-    ShopeditPage
+    ShopeditPage,
+    CreatecatePage,
+    CreateproductPage
+    
   ],
   imports: [
     BrowserModule,
@@ -55,7 +59,9 @@ import { ShopeditPage } from '../pages/shopedit/shopedit';
     LoginPage,
     ShopPage,
     RegisterPage,
-    ShopeditPage
+    ShopeditPage,
+    CreatecatePage,
+    CreateproductPage
 
   ],
   providers: [
