@@ -172,5 +172,8 @@ export class ShopPage {
     popover.present({
     });
   }
-  
+  selectShopBG(){
+    alert("OK");
+  }
+
 }
