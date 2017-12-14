@@ -86,12 +86,17 @@ export class ShopPage {
     popover.present({
     });
   }
+<<<<<<< HEAD
   shopTest() {
     this.shopServiceProvider.getNormalShop().then(data => {
       console.log(data);
       this.shop = data;
     })
     
+=======
+  selectShopBG(){
+    alert("OK");
+>>>>>>> dcf00abb3cff9028e27194b4ae60aaa3054ead1c
   }
 
 }

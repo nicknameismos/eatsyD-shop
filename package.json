@@ -56,7 +56,7 @@
       "cordova-plugin-whitelist": {},
       "ionic-plugin-keyboard": {},
       "com.synconset.imagepicker": {
-        "PHOTO_LIBRARY_USAGE_DESCRIPTION": "your usage message"
+        "PHOTO_LIBRARY_USAGE_DESCRIPTION": " photo use"
       }
     },
     "platforms": [
