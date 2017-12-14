@@ -1,5 +1,6 @@
+import { CoreserviceProvider } from '../../providers/coreservice/coreservice';
 import { Server } from './../../provider/server.config';
-import { CoreserviceProvider } from './../coreservice/coreservice';
+
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
@@ -15,6 +16,12 @@ export class ShopServiceProvider {
 
   constructor(public http: Http, public coreService: CoreserviceProvider, public server: Server) {
     console.log('Hello ShopServiceProvider Provider');
+  }
+  getNormalShop() {
+    return this.http.get("./assets/json/shop.json")
+      .toPromise()
+      .then(response => response.json() as any)
+      .catch(this.handleError);
   }
 
 

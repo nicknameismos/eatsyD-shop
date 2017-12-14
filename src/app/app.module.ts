@@ -1,3 +1,4 @@
+import { PromoteimgPage } from '../pages/promoteimg/promoteimg';
 import { CreateproductPage } from '../pages/createproduct/createproduct';
 import { RegisterPage } from './../pages/register/register';
 import { NgModule, ErrorHandler } from '@angular/core';
@@ -22,9 +23,11 @@ import { ShopPage } from '../pages/shop/shop';
 import { ShopeditPage } from '../pages/shopedit/shopedit';
 import { ShopTimeEditPage } from '../pages/shop-time-edit/shop-time-edit';
 import { CreatecatePage } from '../pages/createcate/createcate';
-import { ShopServiceProvider } from '../providers/shop-service/shop-service';
 import { CoreserviceProvider } from '../providers/coreservice/coreservice';
 import { ImagePicker } from '@ionic-native/image-picker';
+import { UndefinedProvider } from '../providers/undefined/undefined';
+import { ShopServiceProvider } from '../pages/shop/shop-service';
+import { IonUploadImagesComponent } from "../components/ion-upload-image/ion-upload-image";
 @NgModule({
   declarations: [
     MyApp,
@@ -39,7 +42,8 @@ import { ImagePicker } from '@ionic-native/image-picker';
     ShopeditPage,
     ShopTimeEditPage,
     CreatecatePage,
-    CreateproductPage
+    CreateproductPage,
+    PromoteimgPage
 
   ],
   imports: [
@@ -67,7 +71,8 @@ import { ImagePicker } from '@ionic-native/image-picker';
     ShopeditPage,
     ShopTimeEditPage,
     CreatecatePage,
-    CreateproductPage
+    CreateproductPage,
+    PromoteimgPage
 
   ],
   providers: [
@@ -81,7 +86,8 @@ import { ImagePicker } from '@ionic-native/image-picker';
     CoreserviceProvider,
     ImagePicker,
 
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    UndefinedProvider,
   ]
 })
 export class AppModule { }

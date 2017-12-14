@@ -20,17 +20,6 @@ export class CreateproductPage {
   }
 
   ionViewDidLoad() {
-
-    this.createprod = [{
-      img : 'https://image.flaticon.com/icons/png/512/635/635902.png'
-    },
-    {
-      img : 'https://image.flaticon.com/icons/png/512/635/635902.png'
-    },
-    {
-      img : 'https://image.flaticon.com/icons/png/512/635/635902.png'
-    }
-  ]
     console.log('ionViewDidLoad CreateproductPage');
   }
   save() {

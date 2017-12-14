@@ -16,21 +16,21 @@
   </ion-row>
   <ion-row class="name">
     <ion-col>
-      {{shopContact.name}}
+      {{shop.name}}
       <ion-icon name="md-create" color="light"(click)="edit()">
       
       </ion-icon>
     </ion-col>
   </ion-row>
   <ion-row class="name-2">
-    <ion-col>
-      {{shopContact.description}}
+    <ion-col *ngFor="let item of shop.times">
+      {{item.days}}
     </ion-col>
   </ion-row>
   <ion-row class="name-3">
-    <ion-col>
-      <span ion-text color="light"> {{shopContact.address}}</span>
-      <span ion-text color="light">{{shopContact.time}} </span>
+    <ion-col *ngFor="let item of shop.times">
+      <span ion-text color="light"> {{item.timestart}}</span>
+      <span ion-text color="light">{{item.timeend}} </span>
     </ion-col>
   </ion-row>
   <ion-row>
@@ -44,31 +44,31 @@
   </ion-row>
   <ion-scroll scrollX="true" class="slide-xpromote">
     <ion-row no-padding class="row-custom">
-      <ion-col col-4 *ngFor="let item of promote">
-        <img [src]="item.img" width="180vh" height="95vh" (click)="presentPopover2($event)">
+      <ion-col col-4 *ngFor="let item of shop.promoteimage">
+        <img [src]="item.image" width="180vh" height="95vh" (click)="presentPopover2($event)">
       </ion-col>
     </ion-row>
   </ion-scroll>
   <ion-label fixed class="text1">Products</ion-label>
   <ion-scroll scrollX="true" class="slide-xcate">
     <ion-row no-padding class="row-custom">
-      <ion-col col-4 *ngFor="let item of cate">
-        <img [src]="item.img" width="144px" height="104px">
-        <span class="texthover"> {{item.name}} </span>
+      <ion-col col-4 *ngFor="let item of shop.cateimage">
+        <img [src]="item.image" class="cateimg">
+        <span mode="ios" class="texthover"> {{item.title}} </span>
       </ion-col>
       <ion-col col-4>
-        <img src="http://res.cloudinary.com/ha7s6qhcg/image/upload/v1511499758/pp_clfpol.jpg" width="180vh" height="160vh" (click)="presentPopover1($event)">
+        <img src="http://res.cloudinary.com/ha7s6qhcg/image/upload/v1511499758/pp_clfpol.jpg"  class="cateimg" (click)="presentPopover1($event)">
       </ion-col>
     </ion-row>
   </ion-scroll>
 
   <div class="row" [dragula]='"zone1"' [dragulaOptions]="options">
-    <div class="col-md-2" *ngFor="let item of product" (press)="showDelete(item.id)">
+    <div class="col-md-2" *ngFor="let item of shop.productimage" (press)="showDelete(item.id)">
       <span class="bin" (click)="deleteProduct(item.id)" *ngIf="sd[item.id]"><ion-icon name="md-close-circle"></ion-icon></span>
-      <img class="img-h" [src]="item.img" alt="image" height="180px" width="220px">
+      <img class="img-h" [src]="item.image" alt="image" height="180px" width="220px">
       <span class="texthover-2" *ngIf="item.name"> {{item.name}} {{item.price | number}}.-</span>
     </div>
   </div>
-
-
+ 
+  <ion-upload-images [maximumImagesCount]="3" [images]="pImages" [isShowUpload]="true" [isImgProduct]="true"></ion-upload-images>
 </ion-content>
