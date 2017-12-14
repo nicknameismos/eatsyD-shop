@@ -78,12 +78,12 @@ export class ShopPage {
 
     // });
   }
-  presentPopover1(myEvent) {
+  presentPopoverCate(myEvent) {
     let popover = this.popoverCtrl.create(CreatecatePage);
     popover.present({
     });
   }
-  presentPopover2(myEvent) {
+  presentPopoverProduct(myEvent) {
     let popover = this.popoverCtrl.create(CreateproductPage);
     popover.present({
     });
