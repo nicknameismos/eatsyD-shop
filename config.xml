@@ -89,4 +89,5 @@
     <plugin name="com.synconset.imagepicker" spec="~2.1.8">
         <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value=" photo use" />
     </plugin>
+    <plugin name="cordova-plugin-firebase" spec="^0.1.25" />
 </widget>
