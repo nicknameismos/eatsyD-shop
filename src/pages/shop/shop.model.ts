@@ -16,6 +16,7 @@ export class ShopModel {
     importform: string;
     time: Array<TimeModel>;
     category: Array<CategoryType>;
+    items: Array<CategoryProduct>;
 
 }
 export class AddressModel {
@@ -37,4 +38,18 @@ export class TimeModel {
 
 export class CategoryType {
     name: string;
+}
+export class CategoryProduct{
+    cate:Array<CateModel>;
+    Products:Array<ProductModel>;
+}
+export class CateModel{
+    name: String;
+    image: String;
+
+}
+export class ProductModel{
+    name: String;
+    price: Number;
+    image: String;
 }

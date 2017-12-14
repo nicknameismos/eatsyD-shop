@@ -11,14 +11,14 @@
 <ion-content>
   <img src="http://www.hardrock.com/cafes/amsterdam/files/2308/LegendsRoom.jpg" alt="image">
   <span class="fill"></span>
-  <ion-row class="camera" >
+  <ion-row class="camera">
     <ion-icon name="camera" color="light" (click)="selectShopBG()"></ion-icon>
   </ion-row>
   <ion-row class="name">
     <ion-col>
       {{shop.name}}
-      <ion-icon name="md-create" color="light"(click)="edit()">
-      
+      <ion-icon name="md-create" color="light" (click)="edit()">
+
       </ion-icon>
     </ion-col>
   </ion-row>
@@ -52,23 +52,27 @@
   <ion-label fixed class="text1">Products</ion-label>
   <ion-scroll scrollX="true" class="slide-xcate">
     <ion-row no-padding class="row-custom">
-      <ion-col col-4 *ngFor="let item of shop.cateimage">
-        <img [src]="item.image" class="cateimg">
-        <span mode="ios" class="texthover"> {{item.title}} </span>
+      <ion-col col-4 *ngFor="let item of shop.items">
+        <img [src]="item.cate.image" class="cateimg">
+        <span mode="ios" class="texthover"> {{item.cate.name}} </span>
       </ion-col>
       <ion-col col-4>
-        <img src="http://res.cloudinary.com/ha7s6qhcg/image/upload/v1511499758/pp_clfpol.jpg"  class="cateimg" (click)="presentPopover1($event)">
+        <img src="http://res.cloudinary.com/ha7s6qhcg/image/upload/v1511499758/pp_clfpol.jpg" class="cateimg" (click)="presentPopover1($event)">
       </ion-col>
     </ion-row>
   </ion-scroll>
 
   <div class="row" [dragula]='"zone1"' [dragulaOptions]="options">
-    <div class="col-md-2" *ngFor="let item of shop.productimage" (press)="showDelete(item.id)">
-      <span class="bin" (click)="deleteProduct(item.id)" *ngIf="sd[item.id]"><ion-icon name="md-close-circle"></ion-icon></span>
-      <img class="img-h" [src]="item.image" alt="image" height="180px" width="220px">
-      <span class="texthover-2" *ngIf="item.name"> {{item.name}} {{item.price | number}}.-</span>
+    <div class="col-md-2" *ngFor="let item of shop.items" (press)="showDelete(item.id)">
+      <div *ngFor="let itm of item.products">
+        <span class="bin" (click)="deleteProduct(item.id)" *ngIf="sd[item.id]">
+          <ion-icon name="md-close-circle"></ion-icon>
+        </span>
+        <img class="img-h" [src]="itm.image" alt="image" height="180px" width="220px">
+        <span class="texthover-2" *ngIf="itm.name"> {{itm.name}} {{itm.price | number}}.-</span>
+      </div>
     </div>
   </div>
- 
-  <ion-upload-images [maximumImagesCount]="3" [images]="pImages" [isShowUpload]="true" [isImgProduct]="true"></ion-upload-images>
+
+  <ion-upload-images [maximumImagesCount]="3" [images]="pImages" [isShowUpload]="true"></ion-upload-images>
 </ion-content>
