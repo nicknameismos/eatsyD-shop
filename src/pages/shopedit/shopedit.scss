@@ -1,8 +1,9 @@
 page-shopedit {
+
 .borderinput{
     background: rgb(255, 255, 255);
     padding-left: 2vh;
-    height: 5vh;
+   
     width: auto;
     margin-left: 1vh;
     margin-right: 1vh;
@@ -11,36 +12,53 @@ page-shopedit {
     border: 1px solid red;
     
 }
+
+
 .btncent{
     text-align: center;
     bottom: 20px;
 }
+
+
 .swiper-container {
     height: initial;
 }
+
+
 #addStepwrapper{
     overflow:hidden !important;
 }
+
+
 .stickth{
     position: sticky;
 }
+
+
 .bordertime{
     background: rgb(255, 255, 255);
     border-radius: 25px;
     border: 1px solid red;
     margin-bottom: 3vh;
 }
+
+
 .marginL{
 margin-left: 3vh;
 }
+
+
 .pin {
     position: absolute;
     right: 2vh;
     margin-top: -9vh;
     font-size: 1.8em
 }
+
+
 .wordbreak{
     word-break: break-all;
 }
+
 
 }
