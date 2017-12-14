@@ -46,6 +46,27 @@
         {
             "cate": {
                 "_id": "dsfdsfff",
+                "name": "ของทานไม่เล่น2",
+                "image": "https://i.pinimg.com/736x/a1/b6/2e/a1b62e13c959f4ede0f450605c67ed33--thai-dessert-thaifood.jpg"
+            },
+            "products": [
+                {
+                    "_id": "dsfsds",
+                    "name": "เค้กไม่อ้วน",
+                    "image": "https://i.warosu.org/data/ck/img/0095/55/1508128241737.jpg",
+                    "price": 200
+                },
+                {
+                    "_id": "dsfsds",
+                    "name": "เค้กอ้วนอ้วน",
+                    "image": "https://i.warosu.org/data/ck/img/0095/55/1508128241737.jpg",
+                    "price": 200
+                }
+            ]
+        },
+        {
+            "cate": {
+                "_id": "dsfdsfff",
                 "name": "ทะเล",
                 "image": "https://i.pinimg.com/736x/a1/b6/2e/a1b62e13c959f4ede0f450605c67ed33--thai-dessert-thaifood.jpg"
             },
