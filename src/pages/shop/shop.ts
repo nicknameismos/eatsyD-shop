@@ -24,13 +24,14 @@ export class ShopPage {
   private sd: Array<any> = [];
   shop: ShopModel = new ShopModel();
   pImages: Array<any> = [];
+  index: Number = 0;
   shopContact = {
     name: 'ละมุนภัณฑ์',
     description: 'COFFICE IDEA SPACE',
     address: 'LUMLUKKA 5',
     time: '18.00 - 24.00 น.'
-
   }
+  dataProd: any;
 
   constructor(private dragulaService: DragulaService,
     public navCtrl: NavController,
@@ -39,7 +40,7 @@ export class ShopPage {
     public popoverCtrl: PopoverController,
     public shopServiceProvider: ShopServiceProvider) {
     dragulaService.setOptions('zone1', {});
-    
+
   }
 
 
@@ -97,6 +98,9 @@ export class ShopPage {
 
   selectShopBG() {
     alert("OK");
+  }
+  selectedCate(index) {
+    this.index = index;
   }
 
 }

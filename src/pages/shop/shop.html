@@ -52,7 +52,7 @@
   <ion-label fixed class="text1">Products</ion-label>
   <ion-scroll scrollX="true" class="slide-xcate">
     <ion-row no-padding class="row-custom">
-      <ion-col col-4 *ngFor="let item of shop.items">
+      <ion-col col-4 *ngFor="let item of shop.items; let i = index" (click)="selectedCate(i)">
         <img [src]="item.cate.image" class="cateimg">
         <span mode="ios" class="texthover"> {{item.cate.name}} </span>
       </ion-col>
@@ -62,15 +62,13 @@
     </ion-row>
   </ion-scroll>
 
-  <div class="row" [dragula]='"zone1"' [dragulaOptions]="options">
-    <div class="col-md-2" *ngFor="let item of shop.items" (press)="showDelete(item.id)">
-      <div *ngFor="let itm of item.products">
-        <span class="bin" (click)="deleteProduct(item.id)" *ngIf="sd[item.id]">
-          <ion-icon name="md-close-circle"></ion-icon>
-        </span>
-        <img class="img-h" [src]="itm.image" alt="image" height="180px" width="220px">
-        <span class="texthover-2" *ngIf="itm.name"> {{itm.name}} {{itm.price | number}}.-</span>
-      </div>
+  <div class="row" [dragula]='"zone1"' [dragulaOptions]="options" *ngIf="shop.items && shop.items.length > 0">
+    <div class="col-md-2" *ngFor="let itm of shop.items[index].products" (press)="showDelete(itm._id)">
+      <span class="bin" (click)="deleteProduct(itm._id)" *ngIf="sd[itm._id]">
+        <ion-icon name="md-close-circle"></ion-icon>
+      </span>
+      <img class="img-h" [src]="itm.image" alt="image" height="180px" width="220px">
+      <span class="texthover-2" *ngIf="itm.name"> {{itm.name}} {{itm.price | number}}.-</span>
     </div>
   </div>
 
