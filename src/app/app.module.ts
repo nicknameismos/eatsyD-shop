@@ -43,7 +43,8 @@ import { IonUploadImagesComponent } from "../components/ion-upload-image/ion-upl
     ShopTimeEditPage,
     CreatecatePage,
     CreateproductPage,
-    PromoteimgPage
+    PromoteimgPage,
+    IonUploadImagesComponent
 
   ],
   imports: [

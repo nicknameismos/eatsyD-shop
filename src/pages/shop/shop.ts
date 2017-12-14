@@ -22,7 +22,8 @@ export class ShopPage {
   private product: Array<any> = [];
   private promote: Array<any> = [];
   private sd: Array<any> = [];
-  shop : ShopModel = new ShopModel();
+  shop: ShopModel = new ShopModel();
+  pImages: Array<any> = [];
   shopContact = {
     name: 'ละมุนภัณฑ์',
     description: 'COFFICE IDEA SPACE',
@@ -38,6 +39,7 @@ export class ShopPage {
     public popoverCtrl: PopoverController,
     public shopServiceProvider: ShopServiceProvider) {
     dragulaService.setOptions('zone1', {});
+    
   }
 
 
@@ -86,17 +88,15 @@ export class ShopPage {
     popover.present({
     });
   }
-<<<<<<< HEAD
   shopTest() {
     this.shopServiceProvider.getNormalShop().then(data => {
       console.log(data);
       this.shop = data;
     })
-    
-=======
-  selectShopBG(){
+  }
+
+  selectShopBG() {
     alert("OK");
->>>>>>> dcf00abb3cff9028e27194b4ae60aaa3054ead1c
   }
 
 }
